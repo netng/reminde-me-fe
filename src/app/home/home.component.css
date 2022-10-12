@@ -1,0 +1,55 @@
+.tagline-text {
+    color: #EF5306;
+}
+
+.remind-to-email {
+    background-color: #e97337;
+    color: white;
+    padding: 0px 6px 0px 6px;
+}
+
+.remind-to-email:hover {
+    background-color: #EF5306;
+}
+
+.remind-to-tele {
+    background-color: #84d1fa;
+    color: white;
+    padding: 0px 6px 0px 6px;
+}
+
+.remind-to-tele:hover {
+    background-color: #25b3ff;
+}
+
+.remind-to-wa {
+    background-color: #69f3a3;
+    color: white;
+    padding: 0px 6px 0px 6px;
+}
+
+.remind-to-wa:hover {
+    background-color: #09f069;
+}
+
+.remind-to-slack {
+    background-color: #783578;
+    color: white;
+    padding: 0px 6px 0px 6px;
+}
+
+.remind-to-slack:hover {
+    background-color: #400d40;
+}
+
+.btn-remindme-bg {
+    background-color: #f37637;
+}
+
+.btn-remindme-bg:hover {
+    background-color: #EF5306;
+}
+
+.btn-remindme-bg:hover {
+    cursor: pointer;
+}

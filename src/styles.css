@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    font-family: 'Arimo', sans-serif;
+    background-color: rgba(255, 220, 186, 0.4);
+    margin: 0;
+}
