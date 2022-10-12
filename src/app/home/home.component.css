@@ -3,13 +3,13 @@
 }
 
 .remind-to-email {
-    background-color: #e97337;
+    background-color: #e53838;
     color: white;
     padding: 2px 6px 2px 6px;
 }
 
 .remind-to-email:hover {
-    background-color: #EF5306;
+    background-color: #d80909;
 }
 
 .remind-to-tele {
