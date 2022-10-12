@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ButtonModule } from 'primeng/button';
-import {DividerModule} from 'primeng/divider';
+import { DividerModule } from 'primeng/divider';
+import { NavigationComponent } from './navigation/navigation.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    NavigationComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

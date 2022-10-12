@@ -1,0 +1,25 @@
+<!-- Nav -->
+<div class="flex flex-row justify-content-between mt-5" *ngIf="!signInMode">
+    <div class="flex">
+        <img *ngIf="isSignedIn" src="../../assets/remindme_log.png" class="w-4">
+    </div>
+    <div class="flex align-items-center mr-4" *ngIf="!isSignedIn">
+        <button 
+            pButton 
+            pRipple 
+            type="button" 
+            icon="pi pi-user" 
+            label="Sign In" 
+            class="p-button-rounded bg-purple-400 hover:bg-purple-600"
+            (click)="onSignIn()"
+        ></button>
+    </div>
+
+    <div class="flex align-items-center mr-4" *ngIf="isSignedIn">
+        <button 
+            pButton 
+            pRipple type="button" 
+            icon="pi pi-user" 
+            class="p-button-rounded bg-purple-400 hover:bg-purple-600"></button>
+    </div>
+</div>

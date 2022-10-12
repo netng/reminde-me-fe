@@ -5,7 +5,7 @@
 .remind-to-email {
     background-color: #e97337;
     color: white;
-    padding: 0px 6px 0px 6px;
+    padding: 2px 6px 2px 6px;
 }
 
 .remind-to-email:hover {
@@ -15,7 +15,7 @@
 .remind-to-tele {
     background-color: #84d1fa;
     color: white;
-    padding: 0px 6px 0px 6px;
+    padding: 2px 6px 2px 6px;
 }
 
 .remind-to-tele:hover {
@@ -25,7 +25,7 @@
 .remind-to-wa {
     background-color: #69f3a3;
     color: white;
-    padding: 0px 6px 0px 6px;
+    padding: 2px 6px 2px 6px;
 }
 
 .remind-to-wa:hover {
@@ -35,7 +35,7 @@
 .remind-to-slack {
     background-color: #783578;
     color: white;
-    padding: 0px 6px 0px 6px;
+    padding: 2px 6px 2px 6px;
 }
 
 .remind-to-slack:hover {
@@ -48,8 +48,5 @@
 
 .btn-remindme-bg:hover {
     background-color: #EF5306;
-}
-
-.btn-remindme-bg:hover {
     cursor: pointer;
 }
