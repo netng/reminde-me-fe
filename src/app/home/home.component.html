@@ -1,37 +1,41 @@
-<div class="card centered mt-6" *ngIf="!signInMode">
-    <div class="flex flex-column justify-content-center card-container">
-        <!-- LOGO -->
-        <div class="flex align-items-center justify-content-center mb-4">
-            <img src="../../assets/remindme_log.png" alt="logo">
-        </div>
+<div class="container custom-bg-remindme">
+    <app-navigation></app-navigation>
+    <div class="card centered pt-6" *ngIf="!signInMode">
+        <div class="flex flex-column justify-content-center card-container">
+            <!-- LOGO -->
+            <div class="flex align-items-center justify-content-center mb-4">
+                <img src="../../assets/remindme_log.png" alt="logo">
+            </div>
 
-        <!-- TAG LINE -->
-        <div class="flex align-items-center justify-content-center mb-6">
-            <span class="tagline-text font-bold">Realy simple Reminder As A Service</span>
-        </div>
+            <!-- TAG LINE -->
+            <div class="flex align-items-center justify-content-center mb-6">
+                <span class="tagline-text font-bold">Realy simple Reminder As A Service</span>
+            </div>
 
-        <!-- DESCRIPTION SUMMARY -->
-        <div class="flex align-items-center justify-content-center">
-            <span class="tagline-text line-height-4 text-center font-bold text-4xl">
-                Get  Reminder on 
-            </span>
-        </div>
+            <!-- DESCRIPTION SUMMARY -->
+            <div class="flex align-items-center justify-content-center mb-2">
+                <span class="tagline-text line-height-4 text-center font-bold text-4xl">
+                    Get  Reminder on 
+                </span>
+            </div>
 
-        <div class="flex align-items-center justify-content-center font-bold text-4xl mt-2">
-            <div class="remind-to-email mr-2">Email</div> 
-            <div class="remind-to-tele mr-2">Telegram</div> 
-            <div class="remind-to-wa mr-2">WhatsApp</div> 
-            <div class="remind-to-slack mr-2">Slack</div><br />
-        </div>
-        <div class="flex align-items-center justify-content-center font-bold text-4xl mt-4">
-            <div class="underline tagline-text">Remind anything!</div>
-        </div>
+            <div class="flex align-items-center justify-content-center font-bold text-4xl mt-2">
+                <div class="remind-to-email mr-2">Email</div> 
+                <div class="remind-to-tele mr-2">Telegram</div> 
+                <div class="remind-to-wa mr-2">WhatsApp</div> 
+                <div class="remind-to-slack mr-2">Slack</div><br />
+            </div>
+            <div class="flex align-items-center justify-content-center font-bold text-4xl mt-4">
+                <div class="underline tagline-text">Remind anything!</div>
+            </div>
 
-        <!-- BUTTON LOGIN SIGNUP-->
-        <div class="flex flex-column align-items-center justify-content-center mb-8">
-            <p-divider type="dashed" styleClass="text-orange-500"></p-divider>
-            <button pButton type="button" icon="pi pi-thumbs-up" label="Sign up for free" class="btn-remindme-bg"></button>
-        </div>
+            <!-- BUTTON LOGIN SIGNUP-->
+            <div class="flex flex-column align-items-center justify-content-center mb-8">
+                <p-divider type="dashed" styleClass="text-orange-500"></p-divider>
+                <button pButton type="button" icon="pi pi-thumbs-up" label="Sign up for free" class="btn-remindme-bg"></button>
+            </div>
 
+        </div>
     </div>
+
 </div>

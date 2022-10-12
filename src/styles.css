@@ -1,6 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
-html {
+*{ 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
     font-family: 'Arimo', sans-serif;
+}
+
+/**
+html,
+body {
     background-color: rgba(255, 220, 186, 0.4);
     margin: 0;
+}
+*/
+
+.btn-remindme-bg:focus,
+.p-button:enabled:focus,
+.btn-remindme-bg:active,
+.p-button:enabled:active
+{
+    background-color: #EF5306 !important;
+    cursor: pointer;
+}
+
+.custom-bg-remindme {
+    background-color: rgba(255, 220, 186, 0.4);
+    height: 100vh;
 }

@@ -10,6 +10,7 @@
 
 .remind-to-email:hover {
     background-color: #d80909;
+    transform: rotate(10deg);
 }
 
 .remind-to-tele {
@@ -20,6 +21,7 @@
 
 .remind-to-tele:hover {
     background-color: #25b3ff;
+    transform: rotate(-10deg);
 }
 
 .remind-to-wa {
@@ -30,6 +32,7 @@
 
 .remind-to-wa:hover {
     background-color: #09f069;
+    transform: rotate(10deg);
 }
 
 .remind-to-slack {
@@ -40,6 +43,7 @@
 
 .remind-to-slack:hover {
     background-color: #400d40;
+    transform: rotate(-10deg);
 }
 
 .btn-remindme-bg {
