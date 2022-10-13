@@ -22,7 +22,7 @@ export class NavigationComponent implements OnInit {
 
   onSignIn() {
     this.signInMode = !this.appService.signInMode;
-    this.router.navigate(['/signin']);
+    this.router.navigate(['/sign-in']);
   }
 
 }

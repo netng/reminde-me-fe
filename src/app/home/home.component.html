@@ -20,10 +20,10 @@
             </div>
 
             <div class="flex align-items-center justify-content-center font-bold text-4xl mt-2">
-                <div class="remind-to-email mr-2">Email</div> 
-                <div class="remind-to-tele mr-2">Telegram</div> 
-                <div class="remind-to-wa mr-2">WhatsApp</div> 
-                <div class="remind-to-slack mr-2">Slack</div><br />
+                <div class="remind-to-email mr-2 shadow-2 border-2 border-white border-solid">Email</div> 
+                <div class="remind-to-tele mr-2 shadow-2 border-2 border-white border-solid">Telegram</div> 
+                <div class="remind-to-wa mr-2 shadow-2 border-2 border-white border-solid">WhatsApp</div> 
+                <div class="remind-to-slack mr-2 shadow-2 border-2 border-white border-solid">Slack</div><br />
             </div>
             <div class="flex align-items-center justify-content-center font-bold text-4xl mt-4">
                 <div class="underline tagline-text">Remind anything!</div>
@@ -32,7 +32,7 @@
             <!-- BUTTON LOGIN SIGNUP-->
             <div class="flex flex-column align-items-center justify-content-center mb-8">
                 <p-divider type="dashed" styleClass="text-orange-500"></p-divider>
-                <button pButton type="button" icon="pi pi-thumbs-up" label="Sign up for free" class="btn-remindme-bg"></button>
+                <button pButton type="button" icon="pi pi-thumbs-up" label="Sign up for free" class="btn-remindme-bg shadow-2 font-bold" (click)="onSignUp()"></button>
             </div>
 
         </div>

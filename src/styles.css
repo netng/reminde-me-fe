@@ -17,7 +17,8 @@ body {
 .btn-remindme-bg:focus,
 .p-button:enabled:focus,
 .btn-remindme-bg:active,
-.p-button:enabled:active
+.p-button:enabled:active,
+.p-button:enabled:hover
 {
     background-color: #EF5306 !important;
     cursor: pointer;
@@ -27,3 +28,26 @@ body {
     background-color: rgba(255, 220, 186, 0.4);
     height: 100vh;
 }
+
+.btn-remindme-bg {
+    background-color: #f37637;
+}
+
+.btn-remindme-bg:hover {
+    background-color: #EF5306;
+    cursor: pointer;
+}
+
+.login-form {
+    padding-top: 190px;
+}
+
+
+
+
+
+
+
+
+
+
