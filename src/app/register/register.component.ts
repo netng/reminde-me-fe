@@ -11,7 +11,14 @@ import { MessageService } from 'primeng/api';
 })
 export class RegisterComponent implements OnInit {
 
-  user: BaseUser = {} as BaseUser;
+  user: BaseUser = {
+    full_name: '',
+    username: '',
+    email: '',
+    password: '',
+    time_zone: ''
+  };
+
   isRegisterSuccessful: boolean = false;
   errorMessage = '';
 
@@ -40,19 +47,23 @@ export class RegisterComponent implements OnInit {
     ).subscribe({
       next: data => {
         console.log(data);
+        this.authService.user = data;
         this.isRegisterSuccessful = true;
         this.authService.isRegisterSuccessfull = true;
         this.router.navigate(['/sign-in']);
       },
       error: err =>  {
-        console.log(err);
         this.errorMessage = err.error.message;
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Error',
-          detail: this.errorMessage
-        });
+        this.getMessageOnRegisterFailed();
       }
     })
+  }
+
+  getMessageOnRegisterFailed(): void {
+    this.messageService.add({
+      severity: 'error',
+      summary: 'Error',
+      detail: this.errorMessage
+    });
   }
 }

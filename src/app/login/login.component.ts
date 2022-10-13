@@ -8,7 +8,7 @@ import { AuthService } from '../shared/auths/services/auth/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit, OnChanges {
+export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,
@@ -18,20 +18,16 @@ export class LoginComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     if (this.authService.isRegisterSuccessfull) {
-      this.onRegisterSuccess();
+      this.getMessageOnRegisterSuccessfull();
       this.authService.isRegisterSuccessfull = false;
     }
-  }
-
-  ngOnChanges(): void {
   }
 
   onSignUp() {
     this.router.navigate(['/sign-up']);
   }
 
-  onRegisterSuccess(): void {
-    console.log('onRegisterSuccess');
+  getMessageOnRegisterSuccessfull(): void {
     this.messageService.add({
       severity: 'success',
       summary: 'Success',

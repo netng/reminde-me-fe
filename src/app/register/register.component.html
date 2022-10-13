@@ -1,3 +1,8 @@
+<span class="p-float-label">
+<input id="float-input" type="text" pInputText> 
+<label for="float-input">Username</label>
+</span> 
+
 <div class="container custom-bg-remindme-register">
     <div class="flex flex-wrap justify-content-evenly align-content-center login-form">
         <div class="text-center pt-6 mb-3">
@@ -22,7 +27,8 @@
                             type="text" 
                             id="fullname" 
                             pInputText 
-                            ngClass="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-orange-500 w-full"
+                            [ngClass]="{'p-filled': ( user.full_name !== '')}"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-orange-500 w-full"
                             [(ngModel)]="user.full_name"> 
                         <label for="fullname" class="text-orange-300">Fullname *</label>
                     </span>
@@ -34,7 +40,8 @@
                             type="text" 
                             id="username" 
                             pInputText 
-                            ngClass="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-orange-500 w-full"
+                            [ngClass]="{'p-filled': ( user.username !== '')}"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-orange-500 w-full"
                             [(ngModel)]="user.username"> 
                         <label for="username" class="text-orange-300">Username *</label>
                     </span>
@@ -46,6 +53,7 @@
                             type="text" 
                             id="email" 
                             pInputText 
+                            [ngClass]="{'p-filled': ( user.email !== '')}"
                             class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-orange-500 w-full"
                             [(ngModel)]="user.email"> 
                         <label for="email" class="text-orange-300">Email *</label>
@@ -58,7 +66,8 @@
                             type="password" 
                             id="password" 
                             pInputText 
-                            ngClass="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-orange-500 w-full"
+                            [ngClass]="{'p-filled': ( user.password !== '')}"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-orange-500 w-full"
                             [(ngModel)]="user.password"> 
                         <label for="password" class="text-orange-300">Password *</label>
                     </span>
