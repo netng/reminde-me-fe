@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { BaseResponseDto } from 'src/app/shared/dtos/base-response-dto';
 import { BaseUser, User } from '../../models/user.interface';
 
 const AUTH_API: string = 'http://localhost:8080/api/v1/auth';

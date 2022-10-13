@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { AuthService } from '../shared/auths/services/auth/auth.service';
@@ -8,19 +8,22 @@ import { AuthService } from '../shared/auths/services/auth/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnChanges {
 
   constructor(
     private router: Router,
     private authService: AuthService,
     private messageService: MessageService
-  ) {
+  ) { }
+
+  ngOnInit(): void {
     if (this.authService.isRegisterSuccessfull) {
       this.onRegisterSuccess();
+      this.authService.isRegisterSuccessfull = false;
     }
   }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
   }
 
   onSignUp() {
@@ -28,11 +31,12 @@ export class LoginComponent implements OnInit {
   }
 
   onRegisterSuccess(): void {
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Success',
-          detail: 'Register success. You can Sign In now!'
-        });
+    console.log('onRegisterSuccess');
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Success',
+      detail: 'Register success. You can Sign In now!'
+    });
   }
 
 }
