@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BaseUser, User } from '../shared/auths/models/user.interface';
+import { AuthService } from '../shared/auths/services/auth/auth.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-register',
@@ -8,8 +11,14 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
+  user: BaseUser = {} as BaseUser;
+  isRegisterSuccessful: boolean = false;
+  errorMessage = '';
+
   constructor(
-    private router: Router
+    private router: Router,
+    private authService: AuthService,
+    private messageService: MessageService
   ) { }
 
   ngOnInit(): void {
@@ -17,5 +26,33 @@ export class RegisterComponent implements OnInit {
 
   onSignIn() {
     this.router.navigate(['/sign-in']);
+  }
+
+  onRegister(): void {
+    const { full_name, username, email, password, time_zone='Asia/Jakarta' } = this.user;
+    
+    this.authService.register(
+      full_name,
+      username,
+      email,
+      password,
+      time_zone
+    ).subscribe({
+      next: data => {
+        console.log(data);
+        this.isRegisterSuccessful = true;
+        this.authService.isRegisterSuccessfull = true;
+        this.router.navigate(['/sign-in']);
+      },
+      error: err =>  {
+        console.log(err);
+        this.errorMessage = err.error.message;
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: this.errorMessage
+        });
+      }
+    })
   }
 }

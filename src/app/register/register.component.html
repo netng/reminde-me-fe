@@ -1,4 +1,5 @@
 <div class="container custom-bg-remindme-register">
+    <p-toast></p-toast>
     <div class="flex flex-wrap justify-content-evenly align-content-center login-form">
         <div class="text-center pt-6 mb-3">
             <a routerLink="/">
@@ -18,33 +19,60 @@
             <div>
                 <div class="field">
                     <span class="p-float-label">
-                        <input type="text" id="fullname" pInputText class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-orange-500 w-full"> 
+                        <input 
+                            type="text" 
+                            id="fullname" 
+                            pInputText 
+                            ngClass="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-orange-500 w-full"
+                            [(ngModel)]="user.full_name"> 
                         <label for="fullname" class="text-orange-300">Fullname *</label>
                     </span>
                 </div>
 
                 <div class="field">
                     <span class="p-float-label">
-                        <input type="text" id="username" pInputText class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-orange-500 w-full"> 
+                        <input 
+                            type="text" 
+                            id="username" 
+                            pInputText 
+                            ngClass="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-orange-500 w-full"
+                            [(ngModel)]="user.username"> 
                         <label for="username" class="text-orange-300">Username *</label>
                     </span>
                 </div>
 
                 <div class="field">
                     <span class="p-float-label">
-                        <input type="text" id="email" pInputText class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-orange-500 w-full"> 
+                        <input 
+                            type="text" 
+                            id="email" 
+                            pInputText 
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-orange-500 w-full"
+                            [(ngModel)]="user.email"> 
                         <label for="email" class="text-orange-300">Email *</label>
                     </span>
                 </div>
 
                 <div class="field">
                     <span class="p-float-label">
-                        <input type="text" id="password" pInputText class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-orange-500 w-full"> 
+                        <input 
+                            type="password" 
+                            id="password" 
+                            pInputText 
+                            ngClass="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-orange-500 w-full"
+                            [(ngModel)]="user.password"> 
                         <label for="password" class="text-orange-300">Password *</label>
                     </span>
                 </div>
 
-                <button pButton pRipple label="Sign Up" icon="pi pi-sign-in" class="w-full btn-remindme-bg shadow-2 font-bold"></button>
+                <button 
+                    pButton 
+                    pRipple 
+                    label="Sign Up" 
+                    icon="pi pi-sign-in" 
+                    class="w-full btn-remindme-bg shadow-2 font-bold"
+                    (click)="onRegister()"
+                ></button>
             </div>
         </div>
     </div>
