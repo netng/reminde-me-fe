@@ -1,0 +1,5 @@
+.custom-bg-remindme-register {
+    background-image: url("./assets/bg-register.svg");
+    background-repeat: repeat-y;
+    height: 100vh;
+}
