@@ -19,14 +19,26 @@
             <div>
                 <div class="field">
                     <span class="p-float-label">
-                        <input type="text" id="email" pInputText class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-orange-500 w-full"> 
+                        <input 
+                            type="text"
+                            id="email"
+                            pInputText
+                            [(ngModel)]="email"
+                            [ngClass]="{'p-filled': ( email !== '')}"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-orange-500 w-full"> 
                         <label for="email" class="text-orange-300">Email *</label>
                     </span>
                 </div>
 
                 <div class="field">
                     <span class="p-float-label">
-                        <input type="text" id="password" pInputText class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-orange-500 w-full"> 
+                        <input 
+                            type="text"
+                            id="password"
+                            pInputText
+                            [(ngModel)]="password"
+                            [ngClass]="{'p-filled': ( password !== '')}"
+                            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-orange-500 w-full"> 
                         <label for="password" class="text-orange-300">Password *</label>
                     </span>
                 </div>
