@@ -1,0 +1,33 @@
+:host ::ng-deep .header-fieldset-custom.p-fieldset .p-fieldset-legend {
+    background: rgb(240, 183, 152);
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    margin-left: 12px;
+    margin-right: 12px ;
+}
+
+:host ::ng-deep .header-fieldset-custom.p-fieldset .p-fieldset-legend:hover {
+    background: rgb(240, 111, 41);
+}
+
+@media only screen and (max-width: 600px) {
+    .content-section {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+}
+
+@media only screen and (min-width: 600px) {
+    .content-section {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .content-section {
+        padding-left: 178px;
+        padding-right: 178px;
+    }
+}

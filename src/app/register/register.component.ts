@@ -47,19 +47,19 @@ export class RegisterComponent implements OnInit {
     ).subscribe({
       next: data => {
         console.log(data);
-        this.authService.user = data;
+        this.authService.newRegisteredUser = data;
         this.isRegisterSuccessful = true;
         this.authService.isRegisterSuccessfull = true;
         this.router.navigate(['/sign-in']);
       },
       error: err =>  {
         this.errorMessage = err.error.message;
-        this.getMessageOnRegisterFailed();
+        this.setRegisterFailedMessage();
       }
     })
   }
 
-  getMessageOnRegisterFailed(): void {
+  setRegisterFailedMessage(): void {
     this.messageService.add({
       severity: 'error',
       summary: 'Error',

@@ -33,7 +33,7 @@
                 <div class="field">
                     <span class="p-float-label">
                         <input 
-                            type="text"
+                            type="password"
                             id="password"
                             pInputText
                             [(ngModel)]="password"
@@ -43,7 +43,15 @@
                     </span>
                 </div>
 
-                <button pButton pRipple label="Sign In" icon="pi pi-sign-in" iconPos="left" class="w-full btn-remindme-bg shadow-2 font-bold"></button>
+                <button 
+                    pButton
+                    pRipple 
+                    label="Sign In" 
+                    icon="pi pi-sign-in" 
+                    iconPos="left" 
+                    class="w-full btn-remindme-bg shadow-2 font-bold"
+                    (click)="onSignIn()">
+                </button>
             </div>
         </div>
     </div>

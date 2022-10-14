@@ -1,6 +1,5 @@
 .custom-bg-remindme-login {
     background-image: url("./assets/bg-login.svg");
-    background-repeat: repeat-y;
-    background-size: auto;
+    overflow: auto;
     height: 100vh;
 }
