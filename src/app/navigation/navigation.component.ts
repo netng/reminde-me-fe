@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../shared/auths/services/auth/auth.service';
 import { AppService } from '../shared/services/app.service';
 
 @Component({
@@ -9,19 +10,20 @@ import { AppService } from '../shared/services/app.service';
 })
 export class NavigationComponent implements OnInit {
 
-  isSignedIn: boolean = false;
-  signInMode: boolean = false;
+  isAuthenticated: boolean = false;
 
   constructor(
     private router: Router,
-    private appService: AppService
-    ) { }
+    private authService: AuthService
+    ) { 
+      this.isAuthenticated = this.authService.isAuthenticated();
+    }
 
   ngOnInit(): void {
   }
 
   onSignIn() {
-    this.signInMode = !this.appService.signInMode;
+
     this.router.navigate(['/sign-in']);
   }
 

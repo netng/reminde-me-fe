@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable } from 'rxjs';
 import { BaseResponseDto } from 'src/app/shared/dtos/base-response-dto';
 import { environment } from 'src/environments/environment';
@@ -23,8 +24,13 @@ export class AuthService {
   isLogInSuccessfull: boolean = false;
   newRegisteredUser: BaseResponseDto<User> = {} as BaseResponseDto<User>;
   authenticatedUser: BaseResponseDto<AuthenticatedUser> = {} as BaseResponseDto<AuthenticatedUser>;
+  decodedToken: any;
+  authToken: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private jwtHelper: JwtHelperService
+    ) { }
 
   register(
     full_name: string, 
@@ -33,6 +39,7 @@ export class AuthService {
     password: string,
     time_zone: string
   ): Observable<BaseResponseDto<User>> {
+    console.log(time_zone);
     return this.http.post<BaseResponseDto<User>>(
       `${AUTH_API}/signup`,
       {
@@ -44,6 +51,7 @@ export class AuthService {
       },
       httpOptions
     );
+
   }
 
   signIn(usernameOrEmail: string, password: string): Observable<BaseResponseDto<AuthenticatedUser>> {
@@ -58,13 +66,21 @@ export class AuthService {
   }
 
   getToken() {
-    return localStorage.getItem('access_token');
+    this.authToken = localStorage.getItem('access_token');
+    return this.authToken;
   }
 
-  get isLoggedIn(): boolean {
-    let authToken =  this.getToken();
-    return authToken !== null ? true : false;
+  getDecodedToken() {
+    this.decodedToken = this.authToken != null ? this.jwtHelper.decodeToken(this.authToken) : null;
+    return this.decodedToken;
+  }
 
+  isAuthTokenExpired(): boolean {
+    return this.jwtHelper.isTokenExpired(this.getToken());
+  }
+
+  isAuthenticated(): boolean {
+    return !this.isAuthTokenExpired();
   }
 
 }

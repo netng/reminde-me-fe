@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
     username: '',
     email: '',
     password: '',
-    time_zone: ''
+    time_zone: 'Asia/Jakarta'
   };
 
   isRegisterSuccessful: boolean = false;
@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onRegister(): void {
-    const { full_name, username, email, password, time_zone='Asia/Jakarta' } = this.user;
+    const { full_name, username, email, password, time_zone } = this.user;
     
     this.authService.register(
       full_name,

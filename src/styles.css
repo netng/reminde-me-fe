@@ -43,3 +43,7 @@ body {
 .login-form {
     padding-top: 190px;
 }
+
+.capitalize-first-letter::first-letter {
+    text-transform: capitalize;
+}

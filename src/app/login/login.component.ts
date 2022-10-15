@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
         this.authService.authenticatedUser = data;
         this.authService.isLogInSuccessfull = true;
         this.router.navigate(['/dashboard']);
-        console.log(this.authService.authenticatedUser);
       },
       error: err => {
         console.log(err);

@@ -9,47 +9,11 @@
         </div>
 
         <div class="grid">
-            <div class="md:col-4 mb-2">
-                <p-fieldset legend="Meeting dengan alta" [styleClass]="'header-fieldset-custom border-0 text-800 line-height-2'">
+            <div class="md:col-4 mb-2" *ngFor="let reminder of reminders.data">
+                <p-fieldset legend="{{reminder.title.toUpperCase()}}" [styleClass]="'header-fieldset-custom border-0 text-800 line-height-2'">
                     <div class="flex mb-2">
                         <span class="pi pi-book mr-2"></span>
-                        <span>Meeting bahas status project dengan alta</span>
-                    </div>
-                    <div class="flex">
-                        <span class="pi pi-calendar mr-2"></span>
-                        <span>Schedules</span>
-                    </div>
-                </p-fieldset>
-            </div>
-            <div class="md:col-4 mb-2">
-                <p-fieldset legend="Meeting dengan alta" [styleClass]="'header-fieldset-custom border-0 text-800 line-height-2'">
-                    <div class="flex mb-2">
-                        <span class="pi pi-book mr-2"></span>
-                        <span>Meeting bahas status project dengan alta</span>
-                    </div>
-                    <div class="flex">
-                        <span class="pi pi-calendar mr-2"></span>
-                        <span>Schedules</span>
-                    </div>
-                </p-fieldset>
-            </div>
-            <div class="md:col-4 mb-2">
-                <p-fieldset legend="Meeting dengan alta" [styleClass]="'header-fieldset-custom border-0 text-800 line-height-2'">
-                    <div class="flex mb-2">
-                        <span class="pi pi-book mr-2"></span>
-                        <span>Meeting bahas status project dengan alta</span>
-                    </div>
-                    <div class="flex">
-                        <span class="pi pi-calendar mr-2"></span>
-                        <span>Schedules</span>
-                    </div>
-                </p-fieldset>
-            </div>
-            <div class="md:col-4 mb-2">
-                <p-fieldset legend="Meeting dengan alta" [styleClass]="'header-fieldset-custom border-0 text-800 line-height-2'">
-                    <div class="flex mb-2">
-                        <span class="pi pi-book mr-2"></span>
-                        <span>Meeting bahas status project dengan alta</span>
+                        <span class="capitalize-first-letter">{{reminder.description}}</span>
                     </div>
                     <div class="flex">
                         <span class="pi pi-calendar mr-2"></span>

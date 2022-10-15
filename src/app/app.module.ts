@@ -21,6 +21,7 @@ import { MessageService } from 'primeng/api';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RemindersComponent } from './dashboard/reminders/reminders.component';
 import { AuthInterceptor } from './shared/auths/helpers/interceptor/auth.interceptor';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,12 @@ import { AuthInterceptor } from './shared/auths/helpers/interceptor/auth.interce
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
-    }
+    },
+    {
+      provide: JWT_OPTIONS,
+      useValue: JWT_OPTIONS
+    },
+    JwtHelperService
   ],
   bootstrap: [AppComponent]
 })

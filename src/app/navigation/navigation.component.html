@@ -3,14 +3,14 @@
         <div class="flex">
             <a routerLink="/">
                 <img 
-                    *ngIf="!isSignedIn" 
+                    *ngIf="isAuthenticated" 
                     src="../../assets/remindme_log.png" 
                     class="w-4">
             </a>
         </div>
         <div class="flex align-items-center gap-4">
             <button 
-                *ngIf="isSignedIn"
+                *ngIf="!isAuthenticated"
                 pButton 
                 pRipple 
                 type="button" 
@@ -20,6 +20,7 @@
                 (click)="onSignIn()"
             ></button>
             <button 
+                *ngIf="isAuthenticated"
                 routerLink="/dashboard"
                 pButton 
                 pRipple type="button" 
@@ -27,6 +28,7 @@
                 label="My Reminders"
                 class="p-button-rounded bg-orange-600 font-bold shadow-2 font-bold"></button>
             <button 
+                *ngIf="isAuthenticated"
                 pButton 
                 pRipple type="button" 
                 icon="pi pi-user" 
