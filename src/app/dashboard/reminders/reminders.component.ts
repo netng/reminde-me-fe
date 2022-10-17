@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
 import { AuthService } from 'src/app/shared/auths/services/auth/auth.service';
 import { BaseResponseDto } from 'src/app/shared/dtos/base-response-dto';
@@ -19,11 +19,11 @@ export class RemindersComponent implements OnInit {
     private appService: AppService,
     private authService: AuthService
     ) {
-      this.getUserReminders();
     }
 
   ngOnInit(): void {
     this.primeConfig.ripple = true;
+      this.getUserReminders();
   }
 
   getUserReminders() {
@@ -39,6 +39,10 @@ export class RemindersComponent implements OnInit {
           console.log(err);
         }
       });
+  }
+
+  onCreateNewReminder(reminder: Reminder) {
+    this.reminders.data.push(reminder);
   }
 
 }

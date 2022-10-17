@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { BaseResponseDto } from '../dtos/base-response-dto';
-import { Reminder } from '../models/reminder.interface';
-import { Schedule } from '../models/schedule.interface';
+import { BaseReminder, Reminder } from '../models/reminder.interface';
+import { BaseSchedule, Schedule } from '../models/schedule.interface';
 
 const API_URL: string = `${environment.apiUrl}/api/v1`;
 
@@ -38,7 +38,22 @@ export class AppService {
         {
           headers: httpOptions.headers
         });
+  }
 
+  createNewReminder(userId: number, reminder: BaseReminder): Observable<BaseResponseDto<Reminder>> {
+    return this.http
+      .post<BaseResponseDto<Reminder>>(
+        `${API_URL}/users/${userId}/reminders`, reminder, {
+          headers: httpOptions.headers
+        });
+  }
+
+  createNewReminderSchedule(reminderId: number, schedule: BaseSchedule): Observable<BaseResponseDto<Schedule>> {
+    return this.http
+      .post<BaseResponseDto<Schedule>>(
+        `${API_URL}/reminders/${reminderId}/schedules`, schedule, {
+          headers: httpOptions.headers
+        });
   }
 
 }

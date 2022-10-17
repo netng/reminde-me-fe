@@ -11,7 +11,8 @@ import { ToastModule } from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FieldsetModule } from 'primeng/fieldset';
 import { TagModule } from 'primeng/tag';
-import {DialogModule} from 'primeng/dialog';
+import { DialogModule } from 'primeng/dialog';
+import { InputMaskModule } from 'primeng/inputmask';
 
 
 import { AppComponent } from './app.component';
@@ -26,6 +27,7 @@ import { AuthInterceptor } from './shared/auths/helpers/interceptor/auth.interce
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { SchedulesComponent } from './schedules/schedules.component';
 import { NewReminderComponent } from './dashboard/reminders/new-reminder/new-reminder.component';
+import { NewScheduleComponent } from './schedules/new-schedule/new-schedule.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { NewReminderComponent } from './dashboard/reminders/new-reminder/new-rem
     RemindersComponent,
     SchedulesComponent,
     NewReminderComponent,
+    NewScheduleComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,8 @@ import { NewReminderComponent } from './dashboard/reminders/new-reminder/new-rem
     BrowserAnimationsModule,
     FieldsetModule,
     TagModule,
-    DialogModule
+    DialogModule,
+    InputMaskModule
   ],
   providers: [
     MessageService,

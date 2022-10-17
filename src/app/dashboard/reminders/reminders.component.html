@@ -1,6 +1,6 @@
     <div class="content-section pt-8">
         <div class="flex mb-6">
-            <app-new-reminder></app-new-reminder>
+            <app-new-reminder (remindersEmitter)="onCreateNewReminder($event)"></app-new-reminder>
         </div>
 
         <div class="grid">
@@ -10,13 +10,7 @@
                         <span class="pi pi-book mr-2"></span>
                         <span class="capitalize-first-letter">{{reminder.description}}</span>
                     </div>
-                    <div class="flex">
-                        <span class="pi pi-calendar mr-2"></span>
-                        <div class="flex flex-column">
-                            <span>Schedules</span>
-                            <app-schedules [reminderId]="reminder.id"></app-schedules>
-                        </div>
-                    </div>
+                    <app-schedules [reminderId]="reminder.id"></app-schedules>
                 </p-fieldset>
             </div>
         </div>

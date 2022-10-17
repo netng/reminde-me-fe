@@ -1,7 +1,44 @@
 <p-dialog
     header="Create Your Reminder!"
-    [(visible)]="display">
-    content
+    [(visible)]="display"
+    [style]="{width: '300px'}">
+        <div class="mt-2">
+            <div class="field">
+                <span class="p-float-label">
+                    <input 
+                        type="text"
+                        id="title"
+                        pInputText
+                        [(ngModel)]="reminder.title"
+                        [ngClass]="{'p-filled': ( reminder.title !== '')}"
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-orange-500 w-full"> 
+                    <label for="title" class="text-orange-300">Title *</label>
+                </span>
+            </div>
+
+            <div class="field">
+                <span class="p-float-label">
+                    <input 
+                        type="text"
+                        id="description"
+                        pInputText
+                        [(ngModel)]="reminder.description"
+                        [ngClass]="{'p-filled': ( reminder.description !== '')}"
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-orange-500 w-full"> 
+                    <label for="description" class="text-orange-300">Description *</label>
+                </span>
+            </div>
+
+            <button 
+                pButton
+                pRipple 
+                label="Save" 
+                icon="pi pi-plus-circle" 
+                iconPos="left" 
+                class="w-full btn-remindme-bg shadow-2 font-bold"
+                (click)="onCreateNewReminder()">
+            </button>
+        </div>
 </p-dialog>
 
 <button 

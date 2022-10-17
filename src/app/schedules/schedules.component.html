@@ -1,3 +1,15 @@
-<div class="reminder-schedules mt-2" *ngFor="let schedule of schedules.data">
-    <p-tag icon="pi pi-clock" severity="info" value="{{schedule.reminder_date_time}}"></p-tag>
+<div class="flex ">
+    <span class="flex pi pi-calendar mr-2"></span>
+    <span class="flex flex-column">
+        Schedules 
+        <div class="flex flex-column">
+            <div class="reminder-schedules mt-2" *ngFor="let schedule of schedules.data">
+                <p-tag icon="pi pi-clock" severity="info" value="{{schedule.reminder_date_time}}"></p-tag>
+            </div>
+        </div>
+        <app-new-schedule 
+            (scheduleEmitter)="onCreateNewReminderSchedule($event)"
+            [reminderId]="reminderId">
+        </app-new-schedule>
+    </span>
 </div>

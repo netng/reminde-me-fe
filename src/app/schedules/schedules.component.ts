@@ -34,4 +34,8 @@ export class SchedulesComponent implements OnInit {
       });
   }
 
+  onCreateNewReminderSchedule(schedule: Schedule) {
+    this.schedules.data.push(schedule);
+  }
+
 }
