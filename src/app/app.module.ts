@@ -13,6 +13,7 @@ import { FieldsetModule } from 'primeng/fieldset';
 import { TagModule } from 'primeng/tag';
 import { DialogModule } from 'primeng/dialog';
 import { InputMaskModule } from 'primeng/inputmask';
+import { CardModule } from 'primeng/card';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -27,6 +28,7 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { SchedulesComponent } from './schedules/schedules.component';
 import { NewReminderComponent } from './dashboard/reminders/new-reminder/new-reminder.component';
 import { NewScheduleComponent } from './schedules/new-schedule/new-schedule.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { NewScheduleComponent } from './schedules/new-schedule/new-schedule.comp
     SchedulesComponent,
     NewReminderComponent,
     NewScheduleComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +57,7 @@ import { NewScheduleComponent } from './schedules/new-schedule/new-schedule.comp
     TagModule,
     DialogModule,
     InputMaskModule,
+    CardModule
   ],
   providers: [
     MessageService,

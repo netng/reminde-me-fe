@@ -23,8 +23,12 @@ export class NavigationComponent implements OnInit {
   }
 
   onSignIn() {
-
     this.router.navigate(['/sign-in']);
+  }
+
+  onGetUserDetails() {
+    let userId = this.authService.getDecodedToken().sub;
+    this.router.navigate([`/users/${userId}/profile`]);
   }
 
 }

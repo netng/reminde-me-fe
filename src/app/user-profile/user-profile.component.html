@@ -1,0 +1,12 @@
+<div class="container custom-bg-remindme">
+    <app-navigation></app-navigation>
+    <div class="flex justify-content-center mt-8">
+        <p-card header="User Profile" subheader="{{user.username}}" [style]="{width: '360px'}" styleClass="p-card-shadow shadow-2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
+                quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
+            <ng-template pTemplate="footer">
+                <p-button (click)="onLogout()" label="Sign Out" icon="pi pi-sign-out" styleClass="p-button-danger w-full" ></p-button>
+            </ng-template>
+        </p-card>
+    </div>
+</div>

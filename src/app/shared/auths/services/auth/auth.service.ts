@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable } from 'rxjs';
 import { BaseResponseDto } from 'src/app/shared/dtos/base-response-dto';
@@ -29,7 +30,8 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
-    private jwtHelper: JwtHelperService
+    private jwtHelper: JwtHelperService,
+    private router: Router
     ) { }
 
   register(
@@ -82,5 +84,12 @@ export class AuthService {
   isAuthenticated(): boolean {
     return !this.isAuthTokenExpired();
   }
+
+    doLogout() {
+      let removeToken = localStorage.removeItem('access_token');
+      if (removeToken == null) {
+        this.router.navigate(['sign-in']);
+      }
+    }
 
 }
