@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
 import { AuthService } from 'src/app/shared/auths/services/auth/auth.service';
 import { BaseResponseDto } from 'src/app/shared/dtos/base-response-dto';
@@ -28,10 +28,12 @@ export class RemindersComponent implements OnInit {
 
   getUserReminders() {
     let id = this.authService.getDecodedToken().sub;
+    console.log(`User id ${id}`);
     this.appService.getUserReminders(id)
       .subscribe({
         next: (data) => {
           this.reminders = data;
+          console.log(this.reminders);
         },
         error: err => {
           console.log(err);

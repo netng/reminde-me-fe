@@ -4,6 +4,7 @@ import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { BaseResponseDto } from '../dtos/base-response-dto';
 import { Reminder } from '../models/reminder.interface';
+import { Schedule } from '../models/schedule.interface';
 
 const API_URL: string = `${environment.apiUrl}/api/v1`;
 
@@ -21,8 +22,23 @@ export class AppService {
 
   constructor(private http: HttpClient) { }
 
-  getUserReminders(id: number): Observable<BaseResponseDto<Reminder[]>> {
-    return this.http.get<BaseResponseDto<Reminder[]>>(`${API_URL}/users/${id}/reminders`, { headers: httpOptions.headers});
+  getUserReminders(userId: number): Observable<BaseResponseDto<Reminder[]>> {
+    return this.http
+      .get<BaseResponseDto<Reminder[]>>(
+        `${API_URL}/users/${userId}/reminders`,
+        { 
+          headers: httpOptions.headers
+        });
+  }
+
+  getReminderSchedules(reminderId: number): Observable<BaseResponseDto<Schedule[]>> {
+    return this.http
+      .get<BaseResponseDto<Schedule[]>>(
+        `${API_URL}/reminders/${reminderId}/schedules`,
+        {
+          headers: httpOptions.headers
+        });
+
   }
 
 }
