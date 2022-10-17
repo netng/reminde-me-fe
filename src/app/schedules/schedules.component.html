@@ -4,7 +4,7 @@
         Schedules 
         <div class="flex flex-column">
             <div class="reminder-schedules mt-2" *ngFor="let schedule of schedules.data">
-                <p-tag icon="pi pi-clock" severity="info" value="{{schedule.reminder_date_time}}"></p-tag>
+                <p-tag icon="pi pi-clock" [styleClass]="'bg-teal-300 shadow-2'" value="{{schedule.reminder_date_time}}"></p-tag>
             </div>
         </div>
         <app-new-schedule 

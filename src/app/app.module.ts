@@ -14,7 +14,6 @@ import { TagModule } from 'primeng/tag';
 import { DialogModule } from 'primeng/dialog';
 import { InputMaskModule } from 'primeng/inputmask';
 
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavigationComponent } from './navigation/navigation.component';
@@ -54,7 +53,7 @@ import { NewScheduleComponent } from './schedules/new-schedule/new-schedule.comp
     FieldsetModule,
     TagModule,
     DialogModule,
-    InputMaskModule
+    InputMaskModule,
   ],
   providers: [
     MessageService,
